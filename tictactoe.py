@@ -14,7 +14,7 @@ def reset_game():
     # for ARR i have used numbers instead of indexes
     # as it was easier to implement input with numbers
     # from 1 to 9 instead of using indexes which start from 0.
-    # To turn the input number to an index, just subtract 1 
+    # To turn the input number to an index, just subtract 1
     # from the input value as done in the process input function.
     ARR = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     PLAYER = 'X'
@@ -42,16 +42,15 @@ def get_board(ARR, numbered=NUMBERED):
 
     styling options : default|numbered|clean
     '''
-
-    def make_board(x):
-        return f'''{x[0]} | {x[1]} | {x[2]}
+    if numbered:
+        x = ARR
+    else:
+        x = [' ' if isinstance(x, int) else x for x in ARR]
+    return f'''{x[0]} | {x[1]} | {x[2]}
 --+---+--
 {x[3]} | {x[4]} | {x[5]}
 --+---+--
 {x[6]} | {x[7]} | {x[8]}'''
-    # the list comprehension below removes the integers from the list
-    # and replace them with ' '(space) if numbered_board is not true
-    return make_board([' ' if isinstance(x, int) else x for x in ARR] if not numbered else ARR)
 
 
 def alternate_players():
