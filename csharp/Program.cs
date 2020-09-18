@@ -11,7 +11,10 @@ namespace tictactoe
 
         static void RunGame()
         {
-            GameLogic game = new GameLogic(cleanBoard: true);
+            // edit the line below to disable numbered board
+            // false == numbered board
+            // true == clean board
+            GameLogic game = new GameLogic(cleanBoard: false);
             string input;
             do
             {
@@ -30,9 +33,6 @@ namespace tictactoe
             Console.Clear();
             game.PrintWinnerBoard();
             Console.WriteLine();
-
-            // if (game.Draw) { Console.WriteLine("Game ended in a DRAW"); }
-            // else if (game.Win) { Console.WriteLine($"Player {game.CurrentPlayer} WON the game"); }
 
             if (game.Win) { Console.WriteLine($"Player {game.CurrentPlayer} WON the game"); }
             else if (game.Draw) { Console.WriteLine("Game ended in a DRAW"); }
