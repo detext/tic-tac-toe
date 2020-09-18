@@ -11,9 +11,9 @@ namespace tictactoe
 
         static void RunGame()
         {
+            // false = numbered board
+            // true = clean board
             // edit the line below to disable numbered board
-            // false == numbered board
-            // true == clean board
             GameLogic game = new GameLogic(cleanBoard: false);
             string input;
             do

@@ -1,6 +1,6 @@
 # TIC TAC TOE
 
- A command-line TIC TAC TOE written in python.
+ A command-line TIC TAC TOE written in C#.
 
  Two players **X** and **O** will play against each other.
 
